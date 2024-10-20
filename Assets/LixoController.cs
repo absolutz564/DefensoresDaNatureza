@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LixoController : MonoBehaviour
 {
-    public enum TipoLixo { Papel, Vidro, Organico, Metal } // Novos tipos de lixo
+    public enum TipoLixo { Reciclavel, Naoreciclavel, Papel, Vidro, Organico, Metal } // Novos tipos de lixo
     public TipoLixo tipoLixo; // Define o tipo de lixo
     public Vector3 posicaoInicial; // Guarda a posição original do lixo
     private GameManager gameManager; // Referência ao GameManager para controlar a pontuação
@@ -44,8 +44,8 @@ public class LixoController : MonoBehaviour
         {
             // Verifica se a lixeira está ativa no GameManager e corresponde ao tipo de lixo correto
             if (gameManager.LixeiraEscolhidaParaTipo(tipoLixo) && tipoLixo == gameManager.tipoAtual &&
-                ((tagLixeiraAtual == "LixeiraPapel" && tipoLixo == TipoLixo.Papel) ||
-                 (tagLixeiraAtual == "LixeiraVidro" && tipoLixo == TipoLixo.Vidro) ||
+                ((tagLixeiraAtual == "LixeiraReciclavel" && tipoLixo == TipoLixo.Reciclavel) ||
+                 (tagLixeiraAtual == "LixeirNaoReciclavel" && tipoLixo == TipoLixo.Naoreciclavel) ||
                  (tagLixeiraAtual == "LixeiraOrganica" && tipoLixo == TipoLixo.Organico) ||
                  (tagLixeiraAtual == "LixeiraMetal" && tipoLixo == TipoLixo.Metal)))
             {
@@ -98,7 +98,7 @@ public class LixoController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Apenas marcamos que o objeto entrou em contato com uma lixeira
-        if (other.CompareTag("LixeiraPapel") || other.CompareTag("LixeiraVidro") ||
+        if (other.CompareTag("LixeiraReciclavel") || other.CompareTag("LixeiraNaoReciclavel") ||
             other.CompareTag("LixeiraOrganica") || other.CompareTag("LixeiraMetal"))
         {
             colidiuComLixeira = true; // Marca que houve colisão com uma lixeira
@@ -109,7 +109,7 @@ public class LixoController : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // Quando o objeto sai da lixeira, remove a marcação de colisão
-        if (other.CompareTag("LixeiraPapel") || other.CompareTag("LixeiraVidro") ||
+        if (other.CompareTag("LixeiraReciclavel") || other.CompareTag("LixeiraNaoReciclavel") ||
             other.CompareTag("LixeiraOrganica") || other.CompareTag("LixeiraMetal"))
         {
             colidiuComLixeira = false;

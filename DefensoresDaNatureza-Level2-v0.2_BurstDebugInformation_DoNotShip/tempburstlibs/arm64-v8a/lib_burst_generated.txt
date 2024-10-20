@@ -22,6 +22,8 @@ Library: C:\Users\Jailson S\Defensores da Natureza\Temp\BurstOutput\tempburstlib
 --assembly-defines=Newtonsoft.Json;
 --assembly-defines=Oculus.Interaction;
 --assembly-defines=Oculus.Interaction.OVR;
+--assembly-defines=Oculus.Interaction.OVR.Samples;
+--assembly-defines=Oculus.Interaction.Samples;
 --assembly-defines=Oculus.Platform;
 --assembly-defines=Oculus.VR;
 --assembly-defines=System.Configuration;
@@ -75,6 +77,8 @@ Library: C:\Users\Jailson S\Defensores da Natureza\Temp\BurstOutput\tempburstlib
 --assembly-defines=Newtonsoft.Json;
 --assembly-defines=Oculus.Interaction;
 --assembly-defines=Oculus.Interaction.OVR;
+--assembly-defines=Oculus.Interaction.OVR.Samples;
+--assembly-defines=Oculus.Interaction.Samples;
 --assembly-defines=Oculus.Platform;
 --assembly-defines=Oculus.VR;
 --assembly-defines=System.Configuration;

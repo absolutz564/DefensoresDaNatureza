@@ -18,9 +18,12 @@ public class LixeiraOrganica : MonoBehaviour
 
             // Adiciona 100 pontos ao score
             vrGameManager.score += 100;
+            vrGameManager.totalTrashCount ++;
 
             // Atualiza o texto no TextMeshPro com o novo score
-            scoreText.text = "Score: " + vrGameManager.score;
+            scoreText.text = vrGameManager.score.ToString();
+            vrGameManager.victoryScoreText.text = vrGameManager.score.ToString();
+            vrGameManager.UpdateCountByTag(tag);
         }
     }
 }

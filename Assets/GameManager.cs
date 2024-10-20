@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameoverTextoPontuacao; // Campo de texto usando TextMeshProUGUI
     public TextMeshProUGUI textoMensagem; // Campo de texto para mensagens de coleta
 
-    public GameObject lixeiraPapelPrefab;
-    public GameObject lixeiraVidroPrefab;
+    public GameObject lixeiraReciclavelPrefab;
+    public GameObject lixeiraNaoReciclavelPrefab;
     public GameObject lixeiraOrganicaPrefab;
     public GameObject lixeiraMetalPrefab;
     public GameObject popupVitoria; // Referência para o popup de vitória
@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameoverLixeiraContador1; // Contador da primeira lixeira
     public TextMeshProUGUI gameoverLixeiraContador2; // Contador da segunda lixeira
     private int[] contadores = new int[2]; // Contadores para as lixeiras
-    public Sprite spriteLixeiraPapel; // Sprite da lixeira de papel
-    public Sprite spriteLixeiraVidro; // Sprite da lixeira de vidro
+    public Sprite spriteLixeiraReciclavel; // Sprite da lixeira de papel
+    public Sprite spriteLixeiraNaoReciclavel; // Sprite da lixeira de vidro
     public Sprite spriteLixeiraMetal; // Sprite da lixeira de metal
     public Sprite spriteLixeiraOrganico; // Sprite da lixeira orgânica
     private Dictionary<string, Sprite> lixeirasSprites;
@@ -71,15 +71,15 @@ public class GameManager : MonoBehaviour
         }
         timeElapsed = 0f; // Inicia o tempo em 0
         // Inicializa o dicionário de lixeiras
-        lixeiras.Add("LixeiraPapel", lixeiraPapelPrefab);
-        lixeiras.Add("LixeiraVidro", lixeiraVidroPrefab);
+        lixeiras.Add("LixeiraReciclavel", lixeiraReciclavelPrefab);
+        lixeiras.Add("LixeiraNaoReciclavel", lixeiraNaoReciclavelPrefab);
         lixeiras.Add("LixeiraOrganica", lixeiraOrganicaPrefab);
         lixeiras.Add("LixeiraMetal", lixeiraMetalPrefab);
 
         lixeirasSprites = new Dictionary<string, Sprite>
         {
-            { "LixeiraPapel", spriteLixeiraPapel },
-            { "LixeiraVidro", spriteLixeiraVidro },
+            { "LixeiraReciclavel", spriteLixeiraReciclavel },
+            { "LixeiraNaoReciclavel", spriteLixeiraNaoReciclavel },
             { "LixeiraMetal", spriteLixeiraMetal },
             { "LixeiraOrganica", spriteLixeiraOrganico }
         };
@@ -108,6 +108,10 @@ public class GameManager : MonoBehaviour
                 return LixeiraEscolhida("LixeiraOrganica");
             case LixoController.TipoLixo.Metal:
                 return LixeiraEscolhida("LixeiraMetal");
+            case LixoController.TipoLixo.Reciclavel:
+                return LixeiraEscolhida("LixeiraReciclavel");
+            case LixoController.TipoLixo.Naoreciclavel:
+                return LixeiraEscolhida("LixeiraNaoReciclavel");
             default:
                 return false;
         }
@@ -121,7 +125,10 @@ public class GameManager : MonoBehaviour
         // Sorteia duas lixeiras diferentes
         for (int i = 0; i < 2; i++)
         {
-            int index = Random.Range(0, nomesLixeiras.Count);
+            int index = i;
+            Debug.Log(nomesLixeiras);
+            Debug.Log(nomesLixeiras.Count);
+            Debug.Log(nomesLixeiras[index]);
             string nomeLixeira = nomesLixeiras[index];
 
             // Define a rotação no eixo Y como 90 graus
@@ -287,21 +294,17 @@ public class GameManager : MonoBehaviour
 
     private LixoController.TipoLixo ObterTipoLixoAtual()
     {
-        if (lixeirasEscolhidas[indiceColetaAtual].CompareTag("LixeiraPapel"))
+        if (lixeirasEscolhidas[indiceColetaAtual].CompareTag("LixeiraReciclavel"))
         {
-            return LixoController.TipoLixo.Papel;
+            return LixoController.TipoLixo.Reciclavel;
         }
-        else if (lixeirasEscolhidas[indiceColetaAtual].CompareTag("LixeiraVidro"))
+        else if (lixeirasEscolhidas[indiceColetaAtual].CompareTag("LixeiraNaoReciclavel"))
         {
-            return LixoController.TipoLixo.Vidro;
+            return LixoController.TipoLixo.Naoreciclavel;
         }
         else if (lixeirasEscolhidas[indiceColetaAtual].CompareTag("LixeiraOrganica"))
         {
             return LixoController.TipoLixo.Organico;
-        }
-        else if (lixeirasEscolhidas[indiceColetaAtual].CompareTag("LixeiraMetal"))
-        {
-            return LixoController.TipoLixo.Metal;
         }
         else
         {
@@ -322,8 +325,8 @@ public class GameManager : MonoBehaviour
         foreach (var lixo in lixos)
         {
             // Verifica se o tipo de lixo corresponde à lixeira atual que está sendo coletada
-            if ((lixo.tipoLixo == LixoController.TipoLixo.Papel && LixeiraEscolhida("LixeiraPapel")) ||
-                (lixo.tipoLixo == LixoController.TipoLixo.Vidro && LixeiraEscolhida("LixeiraVidro")) ||
+            if ((lixo.tipoLixo == LixoController.TipoLixo.Reciclavel && LixeiraEscolhida("LixeiraReciclavel")) ||
+                (lixo.tipoLixo == LixoController.TipoLixo.Naoreciclavel && LixeiraEscolhida("LixeiraNaoReciclavel")) ||
                 (lixo.tipoLixo == LixoController.TipoLixo.Organico && LixeiraEscolhida("LixeiraOrganica")) ||
                 (lixo.tipoLixo == LixoController.TipoLixo.Metal && LixeiraEscolhida("LixeiraMetal")))
             {
