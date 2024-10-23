@@ -10,40 +10,48 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
-    // Velocidade de rotação para suavizar a transição
     public float rotationSpeed = 5f;
-
-    // Tag para identificar os objetos de lixo
     public string trashTag = "Trash";
 
-    // Referências para TextMeshPro
-    public TextMeshProUGUI timerText;  // Para exibir o tempo
-    public TextMeshProUGUI collectedItemsText; // Para exibir os itens coletados
-    public TextMeshProUGUI scoreText; // Para exibir a pontuação
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI collectedItemsText;
+    public TextMeshProUGUI collectedItems2Text;
+    public TextMeshProUGUI scoreText;
 
-    // Contadores
-    private int collectedItems = 0; // Contador de itens coletados
-    private int maxItems = 10; // Número total de itens a serem coletados
-    private int score = 0; // Pontuação do jogador
-    private float elapsedTime = 0f; // Tempo total decorrido
-    private float timeLimit = 60f; // Tempo limite em segundos
+    private int collectedItems = 0;
+    private int collectedItemstrash1 = 0;
+    private int collectedItemstrash2 = 0;
+    private int maxItems = 10;
+    private int score = 0;
+    private float elapsedTime = 0f;
+    private float timeLimit = 60f;
 
     private bool isHandlingTrash = false;
-    private bool gameEnded = false; // Controla se o jogo já acabou
+    private bool gameEnded = false;
 
-    // Referências para os popups de vitória e gameover
     public GameObject victoryPopup;
     public GameObject gameoverPopup;
 
-    // Referências para os textos de vitória e gameover
     public TextMeshProUGUI victoryCollectedItemsText;
+    public TextMeshProUGUI victoryCollectedItems2Text;
     public TextMeshProUGUI victoryScoreText;
     public TextMeshProUGUI gameoverCollectedItemsText;
+    public TextMeshProUGUI gameoverCollectedItems2Text;
     public TextMeshProUGUI gameoverScoreText;
     public Image TimerImage;
     public Sprite TimerMale;
     public Sprite TimerFemale;
+    public bool isLevel2 = false;
 
+    // Referências para as lixeiras
+    public Transform trashBin1; // Lixeira para os primeiros 5 itens
+    public Transform trashBin2; // Lixeira para os próximos itens
+    public LixeiraController trashBin1Controller;
+    public LixeiraController trashBin2Controller;
+    public GameObject effectTrash1;
+    public GameObject effectTrash2;
+    public GameObject messageTrash1;
+    public GameObject messageTrash2;
     void Start()
     {
         if (PlayerPrefs.GetString("Sex") == "Male")
@@ -54,128 +62,175 @@ public class PlayerController : MonoBehaviour
         {
             TimerImage.sprite = TimerFemale;
         }
-        // Referências ao NavMeshAgent e Animator
+
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        // Desativa a rotação automática
         agent.updateRotation = false;
 
-        // Atualiza os textos iniciais
         UpdateCollectedItemsText();
         UpdateScoreText();
     }
 
     IEnumerator WaitToEnd()
     {
-        yield return new WaitForSeconds(2);
+        gameEnded = true;
+        yield return new WaitForSeconds(1);
         EndGame(true); // Mostra o popup de vitória
-
     }
 
     void Update()
     {
-        if (gameEnded) return; // Se o jogo já acabou, não faz nada
+        if (gameEnded) return;
 
-        // Atualiza o tempo decorrido
         elapsedTime += Time.deltaTime;
-        UpdateTimerText(); // Atualiza o contador de tempo no TextMeshPro
+        UpdateTimerText();
 
-        // Verifica se o tempo acabou
         if (elapsedTime >= timeLimit)
         {
-            EndGame(false); // Mostra o popup de gameover
+            EndGame(false);
             return;
         }
 
-        // Verifica se o jogador coletou todos os itens
         if (collectedItems >= maxItems)
         {
             StartCoroutine(WaitToEnd());
             return;
         }
 
-        // Verifica se chegou ao destino
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
-            // Se o personagem chegar ao destino, volta para a animação de idle
             animator.SetBool("isWalking", false);
         }
         else
         {
-            // Controla manualmente a rotação do personagem enquanto ele se move
             RotateTowards(agent.steeringTarget);
         }
 
-        // Checa o clique do mouse, mas só se o personagem não estiver ocupado
         if (Input.GetMouseButtonDown(0) && !isHandlingTrash)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            // Verifica se o clique foi em um objeto com a tag "Trash"
             if (Physics.Raycast(ray, out hit) && hit.transform.CompareTag(trashTag))
             {
-                // Move o personagem até o objeto clicado
-                agent.SetDestination(hit.point);
-
-                // Inicia a animação de andar
-                animator.SetBool("isWalking", true);
-
-                // Chama a coroutine para lidar com o lixo ao chegar
-                StartCoroutine(HandleTrash(hit.transform.gameObject));
+                if (isLevel2 &&
+                    ((hit.transform.ToString().Contains("Paper") && collectedItems < 5) ||
+                    (hit.transform.ToString().Contains("Organic") && collectedItems >= 5)))
+                {
+                    Debug.Log(hit.transform.ToString());
+                    agent.SetDestination(hit.point);
+                    animator.SetBool("isWalking", true);
+                    StartCoroutine(HandleTrash(hit.transform.gameObject));
+                }
+                else if (!isLevel2)
+                {
+                    // Se não for o level 2, mantenha o comportamento normal
+                    Debug.Log(hit.transform.ToString());
+                    agent.SetDestination(hit.point);
+                    animator.SetBool("isWalking", true);
+                    StartCoroutine(HandleTrash(hit.transform.gameObject));
+                }
             }
         }
     }
 
-    // Coroutine para lidar com o desaparecimento do lixo
     private IEnumerator HandleTrash(GameObject trash)
     {
-        // Indica que o personagem está ocupado
         isHandlingTrash = true;
 
-        // Espera até que o personagem chegue ao destino
         while (agent.remainingDistance > agent.stoppingDistance || agent.pathPending)
         {
             yield return null;
         }
 
-        // Muda de volta para a animação de idle
         animator.SetBool("isWalking", false);
 
-        // Libera o personagem para lidar com o próximo lixo
-        isHandlingTrash = false;
+        if (isLevel2)
+        {
+            // Escolhe a lixeira apropriada baseado no número de itens coletados
+            Transform targetBin = collectedItems < 5 ? trashBin1 : trashBin2;
+            animator.SetBool("isWalking", false);
+  
+            // Muda para animação de idle
+            yield return new WaitForSeconds(0.5f);
+            // Mover até a lixeira
+            agent.SetDestination(targetBin.position);
+            animator.SetBool("isWalking", true);
 
-        // Incrementa os itens coletados e a pontuação
-        collectedItems++;
+            yield return StartCoroutine(WaitToDestroyTrash(trash));
+
+            // Espera o personagem chegar na lixeira
+            while (agent.remainingDistance > agent.stoppingDistance || agent.pathPending)
+            {
+                yield return null;
+            }
+            if (collectedItems < 5)
+            {
+                Debug.Log("Tentando shake");
+                StartCoroutine(trashBin1Controller.ShakeLixeira());
+            } 
+            else
+            {
+                StartCoroutine(trashBin2Controller.ShakeLixeira());
+            }
+            isHandlingTrash = false;
+
+            // Muda para animação de idle
+            animator.SetBool("isWalking", false);
+        }
+        else
+        {
+            // Libera o personagem para lidar com o próximo lixo
+            isHandlingTrash = false;
+            // Chama a coroutine para destruir o lixo com uma pequena animação
+            yield return StartCoroutine(WaitToDestroyTrash(trash));
+        }
+
+        // Atualiza os contadores de itens e pontuação
+        if (isLevel2)
+        {
+            if (collectedItems < 5)
+            {
+                collectedItems++;
+                collectedItemstrash1++;
+            }
+            else
+            {
+                collectedItems++;
+                collectedItemstrash2++;
+            }
+            if (collectedItems == 5)
+            {
+                effectTrash1.SetActive(false);
+                messageTrash1.SetActive(false);
+                effectTrash2.SetActive(true);
+                messageTrash2.SetActive(true);
+            }
+        }
+        else
+        {
+            collectedItems++;
+        }
         score += 150;
 
-        // Atualiza o texto dos itens coletados e pontuação
         UpdateCollectedItemsText();
         UpdateScoreText();
 
-        // Chama a coroutine para destruir o lixo com uma pequena animação
-        yield return StartCoroutine(WaitToDestroyTrash(trash));
+
     }
 
-    // Função para rotacionar o personagem suavemente em direção ao destino
     private void RotateTowards(Vector3 target)
     {
-        // Calcula a direção para o alvo
         Vector3 direction = (target - transform.position).normalized;
 
-        // Se existir movimento na direção
         if (direction != Vector3.zero)
         {
-            // Calcula a rotação alvo
             Quaternion lookRotation = Quaternion.LookRotation(direction);
-
-            // Suavemente interpola a rotação atual para a rotação alvo
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
     }
 
-    // Coroutine para destruir o lixo
     IEnumerator WaitToDestroyTrash(GameObject trash)
     {
         Animator anim = trash.GetComponent<Animator>();
@@ -185,22 +240,34 @@ public class PlayerController : MonoBehaviour
         Destroy(trash);
     }
 
-    // Função para atualizar o texto do contador de tempo
     private void UpdateTimerText()
     {
         int seconds = Mathf.FloorToInt(elapsedTime % 60F);
         timerText.text = string.Format("{0:00}", seconds);
     }
 
-    // Função para atualizar o texto dos itens coletados
     private void UpdateCollectedItemsText()
     {
-        collectedItemsText.text = collectedItems + "/" + maxItems;
-        victoryCollectedItemsText.text = collectedItems + "/" + maxItems;
-        gameoverCollectedItemsText.text = collectedItems + "/" + maxItems;
+        if (isLevel2)
+        {
+            collectedItemsText.text = collectedItemstrash1 + "/5";
+            victoryCollectedItemsText.text = collectedItemstrash1 + "/5";
+            gameoverCollectedItemsText.text = collectedItemstrash1 + "/5";
+            if (collectedItems2Text)
+            {
+                collectedItems2Text.text = collectedItemstrash2 + "/5";
+                victoryCollectedItems2Text.text = collectedItemstrash2 + "/5";
+                gameoverCollectedItems2Text.text = collectedItemstrash2 + "/5";
+            }
+        }
+        else
+        {
+            collectedItemsText.text = collectedItems + "/10";
+            victoryCollectedItemsText.text = collectedItems + "/10";
+            gameoverCollectedItemsText.text = collectedItems + "/10";
+        }
     }
 
-    // Função para atualizar o texto da pontuação
     private void UpdateScoreText()
     {
         scoreText.text = score.ToString();
@@ -208,24 +275,25 @@ public class PlayerController : MonoBehaviour
         gameoverScoreText.text = score.ToString();
     }
 
-    // Função para finalizar o jogo
     private void EndGame(bool victory)
     {
-        gameEnded = true; // Marca que o jogo acabou
+        gameEnded = true;
 
         if (victory)
         {
-            victoryPopup.SetActive(true); // Mostra o popup de vitória
+            victoryPopup.SetActive(true);
         }
         else
         {
-            gameoverPopup.SetActive(true); // Mostra o popup de gameover
+            gameoverPopup.SetActive(true);
         }
     }
+
     public void ReloadScene()
     {
         SceneManager.LoadScene("Level1");
     }
+
     public void GoToHome()
     {
         SceneManager.LoadScene(0);
