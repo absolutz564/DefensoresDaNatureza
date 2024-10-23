@@ -3,12 +3,19 @@ using UnityEngine;
 
 public class LixeiraController : MonoBehaviour
 {
+    public AudioSource lixoAudioSource;
+    public bool isVR = false;  // Flag para verificar se está em VR
+
     public IEnumerator ShakeLixeira()
     {
+        lixoAudioSource.Play();
         Debug.Log("Shake");
+
         Vector3 posicaoInicial = transform.position;
-        float duracao = 0.3f; // Duração do shake
-        float intensidade = 0.08f; // Intensidade do shake
+
+        // Definindo a duração e intensidade com base no estado do VR
+        float duracao = isVR ? 0.2f : 0.3f;  // Duração menor no VR
+        float intensidade = isVR ? 0.006f : 0.08f;  // Intensidade menor no VR
 
         for (float t = 0; t < duracao; t += Time.deltaTime)
         {

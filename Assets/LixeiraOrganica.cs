@@ -6,6 +6,7 @@ public class LixeiraOrganica : MonoBehaviour
     public TextMeshProUGUI scoreText;  // Referência ao componente TextMeshPro para exibir o score
     public string tag;
     public VRGameManager vrGameManager;
+    public LixeiraController controller;
 
     // Este método é chamado quando outro objeto entra no trigger
     private void OnTriggerEnter(Collider other)
@@ -19,6 +20,7 @@ public class LixeiraOrganica : MonoBehaviour
             // Adiciona 100 pontos ao score
             vrGameManager.score += 100;
             vrGameManager.totalTrashCount ++;
+            StartCoroutine(controller.ShakeLixeira());
 
             // Atualiza o texto no TextMeshPro com o novo score
             scoreText.text = vrGameManager.score.ToString();

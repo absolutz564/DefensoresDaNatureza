@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class VRGameManager : MonoBehaviour
 {
@@ -31,12 +32,23 @@ public class VRGameManager : MonoBehaviour
 
     public int totalTrashCount; // Contador total de lixo coletado
     public TextMeshProUGUI victoryScoreText;
+    public Image TimerImage;
+    public Sprite TimerMale;
+    public Sprite TimerFemale;
     void Start()
     {
         timer = gameDuration; // Inicializa o timer com o tempo total de jogo
         //Victory.SetActive(false); // Certifica-se de que Victory não está ativo no início
         //GameOver.SetActive(false); // Certifica-se de que GameOver não está ativo no início
         UpdateTimerText(); // Atualiza o texto do timer no início
+        if (PlayerPrefs.GetString("Sex") == "Male")
+        {
+            TimerImage.sprite = TimerMale;
+        }
+        else
+        {
+            TimerImage.sprite = TimerFemale;
+        }
     }
 
     void Update()
