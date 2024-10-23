@@ -57,15 +57,15 @@ Material:
     - _Edge_2: 0
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _RipplesPower: 2.5
-    - _RipplesScale: 48.3
+    - _RipplesPower: 3.8
+    - _RipplesScale: 29.56
     - _RipplesSpeed: 1.5
     - _Scale_Texture: 0.187
-    - _Wet_Land_Edge: 0.362
+    - _Wet_Land_Edge: 0.489
     - _Wet_Land_Value: -0.42
     m_Colors:
     - Color_1: {r: 0.8679245, g: 0.81047, b: 0.5854396, a: 0}
     - Color_2: {r: 0.85800004, g: 0.54014164, b: 0.048905987, a: 0}
     - _Ripples_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
-    - _Wet_Land_Color: {r: 0.759434, g: 0.9938208, b: 1, a: 0}
+    - _Wet_Land_Color: {r: 0.57978815, g: 0.9405993, b: 0.9528302, a: 0}
   m_BuildTextureStacks: []
