@@ -527,6 +527,141 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 156521153277146088, guid: ca9c10768db54904da883129e6282737, type: 3}
   m_PrefabInstance: {fileID: 6188161613356652988}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &401254247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401254248}
+  - component: {fileID: 401254250}
+  - component: {fileID: 401254249}
+  m_Layer: 5
+  m_Name: Text (TMP)Female
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &401254248
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401254247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900519609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -66}
+  m_SizeDelta: {x: 627.7882, y: 320.1721}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &401254249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401254247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Ol\xE1,\_Defensora da Natureza, n\xF3s precisamos da sua ajuda nesta miss\xE3o.\n\nLeve
+    todo o lixo que encontrar para a lixeira!\n\nContamos com voc\xEA!"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280047788
+  m_fontColor: {r: 0.6745098, g: 0.34509805, b: 0.10980392, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 34.9
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 60
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &401254250
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401254247}
+  m_CullTransparentMesh: 1
 --- !u!1 &590365559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1255,318 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1327578149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6207285690688124810, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1327578150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8411787081085859711, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1523803060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523803061}
+  - component: {fileID: 1523803063}
+  - component: {fileID: 1523803062}
+  m_Layer: 5
+  m_Name: Text (TMP)Female
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1523803061
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523803060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900519605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -66}
+  m_SizeDelta: {x: 627.7882, y: 320.1721}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1523803062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523803060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Ol\xE1,\_Defensora da Natureza, n\xF3s precisamos da sua ajuda nesta miss\xE3o.\n\nVoc\xEA
+    deve recolher todo o lixo e separar os materiais de acordo com a lixeira correta:
+    papel, vidro, pl\xE1stico e org\xE2nico.\n\nContamos com voc\xEA!"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280047788
+  m_fontColor: {r: 0.6745098, g: 0.34509805, b: 0.10980392, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 31
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 60
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1523803063
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523803060}
+  m_CullTransparentMesh: 1
+--- !u!1 &1727917923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727917924}
+  - component: {fileID: 1727917926}
+  - component: {fileID: 1727917925}
+  m_Layer: 5
+  m_Name: Text (TMP)Female
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1727917924
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727917923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900519607}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -66}
+  m_SizeDelta: {x: 627.7882, y: 320.1721}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1727917925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727917923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Ol\xE1,\_Defensora da Natureza, n\xF3s precisamos da sua ajuda nesta miss\xE3o.\n\nVoc\xEA
+    deve recolher todo o lixo e separar o que \xE9 recicl\xE1vel do que n\xE3o \xE9.\n\nContamos
+    com voc\xEA!"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280047788
+  m_fontColor: {r: 0.6745098, g: 0.34509805, b: 0.10980392, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 31.05
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 60
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1727917926
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727917923}
+  m_CullTransparentMesh: 1
+--- !u!224 &1900519605 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7088246505700626991, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1900519606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157163706040317041, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1900519607 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3535588369883610484, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1900519608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 151040977890920850, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1900519609 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8755931789862839705, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1900519610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4821925521503616700, guid: ca9c10768db54904da883129e6282737, type: 3}
+  m_PrefabInstance: {fileID: 6188161613356652988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1925019934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1771,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 842834900}
     m_Modifications:
+    - target: {fileID: 151040977890920850, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_Name
+      value: Text (TMP)Male
+      objectReference: {fileID: 0}
+    - target: {fileID: 151040977890920850, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 156521153277146088, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1532,6 +1987,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1289474518821507569, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1353127402894425916, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -1571,6 +2030,20 @@ PrefabInstance:
     - target: {fileID: 1650254112987448432, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_Name
       value: bg
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287429790349586419, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: MaleMessage
+      value: 
+      objectReference: {fileID: 1900519606}
+    - target: {fileID: 2287429790349586419, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: FemaleMessage
+      value: 
+      objectReference: {fileID: 1523803060}
+    - target: {fileID: 2523367965688846481, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_text
+      value: "Ol\xE1,\_Defensor da Natureza, n\xF3s precisamos da sua ajuda nesta
+        miss\xE3o.\n\nLeve todo o lixo que encontrar para a lixeira!\n\nContamos
+        com voc\xEA!"
       objectReference: {fileID: 0}
     - target: {fileID: 3276537866070316833, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1693,9 +2166,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 590365562}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1327578150}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1327578149}
     - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -1705,12 +2186,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
@@ -1719,6 +2224,21 @@ PrefabInstance:
     - target: {fileID: 4328324053013817916, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821925521503616700, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_Name
+      value: Text (TMP)Male
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821925521503616700, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927673689035996606, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_text
+      value: "Ol\xE1,\_Defensor da Natureza, n\xF3s precisamos da sua ajuda nesta
+        miss\xE3o.\n\nVoc\xEA deve recolher todo o lixo e separar os materiais de
+        acordo com a lixeira correta: papel, vidro, pl\xE1stico e org\xE2nico.\n\nContamos
+        com voc\xEA!"
       objectReference: {fileID: 0}
     - target: {fileID: 5282988866211800439, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_text
@@ -1752,6 +2272,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6207285690688124810, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447936891704211843, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: MaleMessage
+      value: 
+      objectReference: {fileID: 1900519608}
+    - target: {fileID: 6447936891704211843, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: FemaleMessage
+      value: 
+      objectReference: {fileID: 1727917923}
     - target: {fileID: 6832900572967947223, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -1824,13 +2356,44 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8190278610613359985, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_text
+      value: "Ol\xE1,\_Defensor da Natureza, n\xF3s precisamos da sua ajuda nesta
+        miss\xE3o.\n\nVoc\xEA deve recolher todo o lixo e separar o que \xE9 recicl\xE1vel
+        do que n\xE3o \xE9.\n\nContamos com voc\xEA!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296418058309875751, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: MaleMessage
+      value: 
+      objectReference: {fileID: 1900519610}
+    - target: {fileID: 8296418058309875751, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: FemaleMessage
+      value: 
+      objectReference: {fileID: 401254247}
     - target: {fileID: 8411787081085859711, guid: ca9c10768db54904da883129e6282737, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9157163706040317041, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_Name
+      value: Text (TMP)Male
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157163706040317041, guid: ca9c10768db54904da883129e6282737, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8755931789862839705, guid: ca9c10768db54904da883129e6282737, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 401254248}
+    - targetCorrespondingSourceObject: {fileID: 3535588369883610484, guid: ca9c10768db54904da883129e6282737, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1727917924}
+    - targetCorrespondingSourceObject: {fileID: 7088246505700626991, guid: ca9c10768db54904da883129e6282737, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1523803061}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7518398928528519784, guid: ca9c10768db54904da883129e6282737, type: 3}
       insertIndex: -1

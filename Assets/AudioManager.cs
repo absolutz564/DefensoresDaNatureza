@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;  // Singleton instance
+
     public Sprite muteSprite;          // Sprite de mute
     public Sprite unmuteSprite;        // Sprite de unmute
     private bool isMuted = false;      // Estado de mute
@@ -12,7 +14,17 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        // Verifica se já existe uma instância do AudioManager
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // Mantém o objeto ao trocar de cena
+        }
+        else
+        {
+            Destroy(gameObject);  // Destroi qualquer nova instância
+            return;  // Sai do método para evitar duplicação de configuração
+        }
 
         // Buscar todos os AudioSources na cena, incluindo objetos desativados
         allAudioSources = FindAllAudioSources();

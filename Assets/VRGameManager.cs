@@ -59,10 +59,10 @@ public class VRGameManager : MonoBehaviour
             timer -= Time.deltaTime; // Reduz o tempo com base no tempo real
             UpdateTimerText(); // Atualiza o texto do timer
 
-            if (timer <= 0f)
-            {
-                GameOver.SetActive(true); // Exibe o popup de GameOver
-            }
+            //if (timer <= 0f)
+            //{
+            //    GameOver.SetActive(true); // Exibe o popup de GameOver
+            //}
 
             // Verifica se o jogador coletou 16 lixos
             totalTrashCount = organicCount + glassCount + paperCount + plasticCount;

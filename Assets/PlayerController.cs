@@ -86,11 +86,11 @@ public class PlayerController : MonoBehaviour
         elapsedTime += Time.deltaTime;
         UpdateTimerText();
 
-        if (elapsedTime >= timeLimit)
-        {
-            EndGame(false);
-            return;
-        }
+        //if (elapsedTime >= timeLimit)
+        //{
+        //    EndGame(false);
+        //    return;
+        //}
 
         if (collectedItems >= maxItems)
         {
